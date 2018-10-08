@@ -17,8 +17,8 @@ import com.earth.mall.common.PageInfo;
 
 public class TestGoodsBrandMapper extends TestBaseContext {
 
-	@Autowired
-	private GoodsBrandMapper goodsBrandMapper;
+    @Autowired
+    private GoodsBrandMapper goodsBrandMapper;
 
 //	@Test
 //	public void queryById() throws Exception {
@@ -28,18 +28,18 @@ public class TestGoodsBrandMapper extends TestBaseContext {
 //		this.log(record);
 //	}
 
-	@Test
-	public void queryByPage() throws Exception {
-		this.log("queryByPage");
-		Map<String, Object> params = new HashMap<String, Object>();
-		PageInfo pageInfo = new PageInfo();
-		pageInfo.setCurrentPage(1);
-		pageInfo.setPageSize(5);
-		params.put("name", "goodsBrand");
-		params.put("page", pageInfo); // 分页
-		List<GoodsBrand> record = this.goodsBrandMapper.selectByPage(params);
-		this.log(record);
-	}
+    @Test
+    public void queryByPage() throws Exception {
+        this.log("queryByPage");
+        Map<String, Object> params = new HashMap<String, Object>();
+        PageInfo pageInfo = new PageInfo();
+        pageInfo.setCurrentPage(1);
+        pageInfo.setPageSize(5);
+        params.put("name", "goodsBrand");
+        params.put("page", pageInfo); // 分页
+        List<GoodsBrand> record = this.goodsBrandMapper.selectByPage(params);
+        this.log(record);
+    }
 
 //	@Test
 //	public void insert() throws Exception {

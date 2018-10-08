@@ -13,15 +13,15 @@ import com.earth.mall.app.service.IGoodsBrandService;
 @Service("goodsBrandService")
 public class GoodsBrandService implements IGoodsBrandService {
 
-	@Autowired
-	private GoodsBrandMapper goodsBrandMapper;
+    @Autowired
+    private GoodsBrandMapper goodsBrandMapper;
 
-	public GoodsBrand queryById(Long id) {
-		return this.goodsBrandMapper.selectByPrimaryKey(id);
-	}
+    public GoodsBrand queryById(Long id) {
+        return this.goodsBrandMapper.selectByPrimaryKey(id);
+    }
 
-	public List<GoodsBrand> queryList(Map<String, Object> params) {
-		return this.goodsBrandMapper.selectByPage(params);
-	}
+    public List<GoodsBrand> queryList(Map<String, Object> params) {
+        return this.goodsBrandMapper.selectByPage(params);
+    }
 
 }

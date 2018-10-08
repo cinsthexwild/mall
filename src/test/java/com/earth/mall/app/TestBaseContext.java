@@ -12,16 +12,16 @@ import com.alibaba.fastjson.JSON;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 // 告诉junit spring配置文件
-@ContextConfiguration({ "classpath:spring/dao.xml", "classpath:spring/service.xml" })
+@ContextConfiguration({"classpath:spring/dao.xml", "classpath:spring/service.xml"})
 public class TestBaseContext {
 
-	public void log(Object obj) {
-		System.out.println(">>> " + JSON.toJSONString(obj));
-	}
+    public void log(Object obj) {
+        System.out.println(">>> " + JSON.toJSONString(obj));
+    }
 
-	@Test
-	public void testContext() throws Exception {
+    @Test
+    public void testContext() throws Exception {
 //		this.log("TestBaseContext load spring配置文件");
-	}
+    }
 
 }

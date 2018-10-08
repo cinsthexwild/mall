@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.earth.mall.app.dao.OrderProductCommentMapper">
-  <resultMap id="BaseResultMap" type="com.earth.mall.app.entity.OrderProductComment">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="sku_id" jdbcType="BIGINT" property="skuId" />
-    <result column="spu_id" jdbcType="BIGINT" property="spuId" />
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
-    <result column="user_nickname" jdbcType="VARCHAR" property="userNickname" />
-    <result column="like_num" jdbcType="INTEGER" property="likeNum" />
-    <result column="comment" jdbcType="VARCHAR" property="comment" />
-    <result column="score" jdbcType="TINYINT" property="score" />
-    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
-    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
-  </resultMap>
-  <sql id="Base_Column_List">
+    <resultMap id="BaseResultMap" type="com.earth.mall.app.entity.OrderProductComment">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="sku_id" jdbcType="BIGINT" property="skuId"/>
+        <result column="spu_id" jdbcType="BIGINT" property="spuId"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+        <result column="like_num" jdbcType="INTEGER" property="likeNum"/>
+        <result column="comment" jdbcType="VARCHAR" property="comment"/>
+        <result column="score" jdbcType="TINYINT" property="score"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, sku_id, spu_id, user_id, user_nickname, like_num, comment, score, created_at, 
     updated_at
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from order_product_comment
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from order_product_comment
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from order_product_comment
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.earth.mall.app.entity.OrderProductComment">
+    <insert id="insert" parameterType="com.earth.mall.app.entity.OrderProductComment">
     insert into order_product_comment (id, sku_id, spu_id, 
       user_id, user_nickname, like_num, 
       comment, score, created_at, 
@@ -37,107 +37,107 @@
       #{comment,jdbcType=VARCHAR}, #{score,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, 
       #{updatedAt,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.earth.mall.app.entity.OrderProductComment">
-    insert into order_product_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="skuId != null">
-        sku_id,
-      </if>
-      <if test="spuId != null">
-        spu_id,
-      </if>
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="userNickname != null">
-        user_nickname,
-      </if>
-      <if test="likeNum != null">
-        like_num,
-      </if>
-      <if test="comment != null">
-        comment,
-      </if>
-      <if test="score != null">
-        score,
-      </if>
-      <if test="createdAt != null">
-        created_at,
-      </if>
-      <if test="updatedAt != null">
-        updated_at,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="skuId != null">
-        #{skuId,jdbcType=BIGINT},
-      </if>
-      <if test="spuId != null">
-        #{spuId,jdbcType=BIGINT},
-      </if>
-      <if test="userId != null">
-        #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="userNickname != null">
-        #{userNickname,jdbcType=VARCHAR},
-      </if>
-      <if test="likeNum != null">
-        #{likeNum,jdbcType=INTEGER},
-      </if>
-      <if test="comment != null">
-        #{comment,jdbcType=VARCHAR},
-      </if>
-      <if test="score != null">
-        #{score,jdbcType=TINYINT},
-      </if>
-      <if test="createdAt != null">
-        #{createdAt,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatedAt != null">
-        #{updatedAt,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.earth.mall.app.entity.OrderProductComment">
-    update order_product_comment
-    <set>
-      <if test="skuId != null">
-        sku_id = #{skuId,jdbcType=BIGINT},
-      </if>
-      <if test="spuId != null">
-        spu_id = #{spuId,jdbcType=BIGINT},
-      </if>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="userNickname != null">
-        user_nickname = #{userNickname,jdbcType=VARCHAR},
-      </if>
-      <if test="likeNum != null">
-        like_num = #{likeNum,jdbcType=INTEGER},
-      </if>
-      <if test="comment != null">
-        comment = #{comment,jdbcType=VARCHAR},
-      </if>
-      <if test="score != null">
-        score = #{score,jdbcType=TINYINT},
-      </if>
-      <if test="createdAt != null">
-        created_at = #{createdAt,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatedAt != null">
-        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.earth.mall.app.entity.OrderProductComment">
+    <insert id="insertSelective" parameterType="com.earth.mall.app.entity.OrderProductComment">
+        insert into order_product_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="skuId != null">
+                sku_id,
+            </if>
+            <if test="spuId != null">
+                spu_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userNickname != null">
+                user_nickname,
+            </if>
+            <if test="likeNum != null">
+                like_num,
+            </if>
+            <if test="comment != null">
+                comment,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="createdAt != null">
+                created_at,
+            </if>
+            <if test="updatedAt != null">
+                updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="skuId != null">
+                #{skuId,jdbcType=BIGINT},
+            </if>
+            <if test="spuId != null">
+                #{spuId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userNickname != null">
+                #{userNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="likeNum != null">
+                #{likeNum,jdbcType=INTEGER},
+            </if>
+            <if test="comment != null">
+                #{comment,jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                #{score,jdbcType=TINYINT},
+            </if>
+            <if test="createdAt != null">
+                #{createdAt,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedAt != null">
+                #{updatedAt,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.earth.mall.app.entity.OrderProductComment">
+        update order_product_comment
+        <set>
+            <if test="skuId != null">
+                sku_id = #{skuId,jdbcType=BIGINT},
+            </if>
+            <if test="spuId != null">
+                spu_id = #{spuId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userNickname != null">
+                user_nickname = #{userNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="likeNum != null">
+                like_num = #{likeNum,jdbcType=INTEGER},
+            </if>
+            <if test="comment != null">
+                comment = #{comment,jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                score = #{score,jdbcType=TINYINT},
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.earth.mall.app.entity.OrderProductComment">
     update order_product_comment
     set sku_id = #{skuId,jdbcType=BIGINT},
       spu_id = #{spuId,jdbcType=BIGINT},

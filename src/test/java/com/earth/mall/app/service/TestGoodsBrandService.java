@@ -8,14 +8,14 @@ import com.earth.mall.app.entity.GoodsBrand;
 
 public class TestGoodsBrandService extends TestBaseContext {
 
-	@Autowired
-	private IGoodsBrandService goodsBrandService;
+    @Autowired
+    private IGoodsBrandService goodsBrandService;
 
-	@Test
-	public void test() throws Exception {
-		long id = 1;
-		GoodsBrand goodsBrand = goodsBrandService.queryById(id);
-		this.log(goodsBrand);
-	}
+    @Test
+    public void test() throws Exception {
+        long id = 1;
+        GoodsBrand goodsBrand = goodsBrandService.queryById(id);
+        this.log(goodsBrand);
+    }
 
 }

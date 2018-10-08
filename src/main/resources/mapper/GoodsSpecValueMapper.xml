@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.earth.mall.app.dao.GoodsSpecValueMapper">
-  <resultMap id="BaseResultMap" type="com.earth.mall.app.entity.GoodsSpecValue">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="spec_id" jdbcType="BIGINT" property="specId" />
-    <result column="spec_value" jdbcType="VARCHAR" property="specValue" />
-    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
-    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
-  </resultMap>
-  <sql id="Base_Column_List">
+    <resultMap id="BaseResultMap" type="com.earth.mall.app.entity.GoodsSpecValue">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="spec_id" jdbcType="BIGINT" property="specId"/>
+        <result column="spec_value" jdbcType="VARCHAR" property="specValue"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     id, spec_id, spec_value, created_at, updated_at
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from goods_spec_value
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from goods_spec_value
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from goods_spec_value
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
+    <insert id="insert" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
     insert into goods_spec_value (id, spec_id, spec_value, 
       created_at, updated_at)
     values (#{id,jdbcType=BIGINT}, #{specId,jdbcType=BIGINT}, #{specValue,jdbcType=VARCHAR}, 
       #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
-    insert into goods_spec_value
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="specId != null">
-        spec_id,
-      </if>
-      <if test="specValue != null">
-        spec_value,
-      </if>
-      <if test="createdAt != null">
-        created_at,
-      </if>
-      <if test="updatedAt != null">
-        updated_at,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="specId != null">
-        #{specId,jdbcType=BIGINT},
-      </if>
-      <if test="specValue != null">
-        #{specValue,jdbcType=VARCHAR},
-      </if>
-      <if test="createdAt != null">
-        #{createdAt,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatedAt != null">
-        #{updatedAt,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
-    update goods_spec_value
-    <set>
-      <if test="specId != null">
-        spec_id = #{specId,jdbcType=BIGINT},
-      </if>
-      <if test="specValue != null">
-        spec_value = #{specValue,jdbcType=VARCHAR},
-      </if>
-      <if test="createdAt != null">
-        created_at = #{createdAt,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updatedAt != null">
-        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
+    <insert id="insertSelective" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
+        insert into goods_spec_value
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="specId != null">
+                spec_id,
+            </if>
+            <if test="specValue != null">
+                spec_value,
+            </if>
+            <if test="createdAt != null">
+                created_at,
+            </if>
+            <if test="updatedAt != null">
+                updated_at,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="specId != null">
+                #{specId,jdbcType=BIGINT},
+            </if>
+            <if test="specValue != null">
+                #{specValue,jdbcType=VARCHAR},
+            </if>
+            <if test="createdAt != null">
+                #{createdAt,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedAt != null">
+                #{updatedAt,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
+        update goods_spec_value
+        <set>
+            <if test="specId != null">
+                spec_id = #{specId,jdbcType=BIGINT},
+            </if>
+            <if test="specValue != null">
+                spec_value = #{specValue,jdbcType=VARCHAR},
+            </if>
+            <if test="createdAt != null">
+                created_at = #{createdAt,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedAt != null">
+                updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.earth.mall.app.entity.GoodsSpecValue">
     update goods_spec_value
     set spec_id = #{specId,jdbcType=BIGINT},
       spec_value = #{specValue,jdbcType=VARCHAR},

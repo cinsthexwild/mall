@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserAction {
 
-	@RequestMapping("list")
-	public String list() {
-		System.out.println("列表");
-		return "Goods";
-	}
+    @RequestMapping("list")
+    public String list() {
+        System.out.println("列表");
+        return "Goods";
+    }
 
 }

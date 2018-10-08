@@ -17,19 +17,19 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class TestGoodsAction extends TestBaseContextAction {
 
-	private MockMvc mockMvc;
-	private String detailUrl = "/goods/brand/detail";
+    private MockMvc mockMvc;
+    private String detailUrl = "/goods/brand/detail";
 
-	@Before
-	public void setup() {
-		this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).alwaysDo(print()).build();
-	}
+    @Before
+    public void setup() {
+        this.mockMvc = webAppContextSetup(this.wac).alwaysExpect(status().isOk()).alwaysDo(print()).build();
+    }
 
-	@Test
-	public void detailApi() throws Exception {
-		this.log("api url: " + detailUrl);
-		this.mockMvc.perform(get(detailUrl).param("id", "1"))
-				.andExpect(content().contentType("application/json;charset=utf-8"));
-	}
+    @Test
+    public void detailApi() throws Exception {
+        this.log("api url: " + detailUrl);
+        this.mockMvc.perform(get(detailUrl).param("id", "1"))
+                .andExpect(content().contentType("application/json;charset=utf-8"));
+    }
 
 }

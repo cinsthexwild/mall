@@ -7,20 +7,20 @@ import com.earth.mall.app.entity.GoodsBrand;
 
 public interface GoodsBrandMapper {
 
-	int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Long id);
 
-	int insert(GoodsBrand record);
+    int insert(GoodsBrand record);
 
-	int insertSelective(GoodsBrand record);
+    int insertSelective(GoodsBrand record);
 
-	GoodsBrand selectByPrimaryKey(Long id);
+    GoodsBrand selectByPrimaryKey(Long id);
 
-	int updateByPrimaryKeySelective(GoodsBrand record);
+    int updateByPrimaryKeySelective(GoodsBrand record);
 
-	int updateByPrimaryKey(GoodsBrand record);
+    int updateByPrimaryKey(GoodsBrand record);
 
-	int deleteByPrimaryKeys(List<Long> ids);
-	
-	List<GoodsBrand> selectByPage(Map<String, Object> params);
+    int deleteByPrimaryKeys(List<Long> ids);
+
+    List<GoodsBrand> selectByPage(Map<String, Object> params);
 
 }

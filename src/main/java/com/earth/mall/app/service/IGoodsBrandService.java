@@ -7,8 +7,8 @@ import com.earth.mall.app.entity.GoodsBrand;
 
 public interface IGoodsBrandService {
 
-	GoodsBrand queryById(Long id);
+    GoodsBrand queryById(Long id);
 
-	List<GoodsBrand> queryList(Map<String, Object> params);
+    List<GoodsBrand> queryList(Map<String, Object> params);
 
 }
