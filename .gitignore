@@ -4,3 +4,5 @@ logs
 .project
 .settings
 .DS_Store
+/target/
+/bin/
