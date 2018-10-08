@@ -1,0 +1,14 @@
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/common/ReflectHelper.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/controller/DefaultAction.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/common/Const.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/app/entity/GoodsBrand.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/common/PageInfo.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/interceptor/PageInterceptor.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/common/StatusCode.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/app/service/IGoodsBrandService.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/app/dto/Result.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/controller/UserAction.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/controller/GoodsAction.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/common/Util.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/app/dao/GoodsBrandMapper.java
+/Users/chenshixiong/eclipse-workspace/mall/src/main/java/com/earth/mall/app/service/impl/GoodsBrandService.java

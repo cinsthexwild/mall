@@ -1,0 +1,5 @@
+com/earth/mall/app/dao/TestGoodsBrandMapper.class
+com/earth/mall/app/service/TestGoodsBrandService.class
+com/earth/mall/controller/TestBaseContextAction.class
+com/earth/mall/app/TestBaseContext.class
+com/earth/mall/controller/TestGoodsAction.class
