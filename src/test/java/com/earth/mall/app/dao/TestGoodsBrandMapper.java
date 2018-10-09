@@ -20,13 +20,13 @@ public class TestGoodsBrandMapper extends TestBaseContext {
     @Autowired
     private GoodsBrandMapper goodsBrandMapper;
 
-//	@Test
-//	public void queryById() throws Exception {
-//		this.log("testQueryById");
-//		long id = 1;
-//		GoodsBrand record = this.goodsBrandMapper.selectByPrimaryKey(id);
-//		this.log(record);
-//	}
+    @Test
+    public void queryById() throws Exception {
+        this.log("testQueryById");
+        long id = 1;
+        GoodsBrand record = this.goodsBrandMapper.selectByPrimaryKey(id);
+        this.log(record);
+    }
 
     @Test
     public void queryByPage() throws Exception {
