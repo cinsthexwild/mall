@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.earth.mall.app.dto.ResultMap;
+import com.earth.mall.common.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,13 +24,10 @@ public class GoodsAction {
     @Autowired
     private IGoodsBrandService goodsBrandService;
 
-    @RequestMapping(value = "brand/detail", method = RequestMethod.GET)
+    @RequestMapping(value = "brand/detail2", method = RequestMethod.GET)
     @ResponseBody
-    public Result brandDetail(HttpServletRequest request) {
-        System.out.println("显示Brand");
-        Long id = Long.parseLong(request.getParameter("id"));
-        GoodsBrand goodsBrand = this.goodsBrandService.queryById(id);
-        return new Result(goodsBrand);
+    public Result brandDetail2(Long id) {
+        return new Result(this.goodsBrandService.queryById(id));
     }
 
     @RequestMapping(value = "brand/list", method = RequestMethod.GET)
@@ -42,6 +41,15 @@ public class GoodsAction {
         params.put("name", "goodsBrand");
         params.put("page", pageInfo); // 分页
         return new Result(this.goodsBrandService.queryList(params));
+    }
+
+    @RequestMapping(value = "brand/list2", method = RequestMethod.GET)
+    @ResponseBody
+    public Result list2(PageInfo pageInfo) {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("name", "goodsBrand");
+        params.put("page", pageInfo); // 分页
+        return new ResultMap().put("pageInfo", pageInfo).put("list", this.goodsBrandService.queryList(params));
     }
 
     @RequestMapping("del")
