@@ -21,6 +21,6 @@ public interface GoodsBrandMapper {
 
     int deleteByPrimaryKeys(List<Long> ids);
 
-    List<GoodsBrand> selectByPage(Map<String, Object> params);
+    List<GoodsBrand> selectByParams(Map<String, Object> params);
 
 }

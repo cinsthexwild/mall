@@ -21,7 +21,7 @@ public class GoodsBrandService implements IGoodsBrandService {
     }
 
     public List<GoodsBrand> queryList(Map<String, Object> params) {
-        return this.goodsBrandMapper.selectByPage(params);
+        return this.goodsBrandMapper.selectByParams(params);
     }
 
 }

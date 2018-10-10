@@ -1,12 +1,9 @@
 package com.earth.mall.app.dao;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +34,7 @@ public class TestGoodsBrandMapper extends TestBaseContext {
         pageInfo.setPageSize(5);
         params.put("name", "goodsBrand");
         params.put("page", pageInfo); // 分页
-        List<GoodsBrand> record = this.goodsBrandMapper.selectByPage(params);
+        List<GoodsBrand> record = this.goodsBrandMapper.selectByParams(params);
         this.log(record);
     }
 

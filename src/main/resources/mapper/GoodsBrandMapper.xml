@@ -21,32 +21,11 @@
         from goods_brand
         where id = #{id,jdbcType=BIGINT}
     </select>
-    <select id="selectByPage" resultMap="BaseResultMap"
-            parameterType="java.util.Map">
-        select
-        <include refid="Base_Column_List"/>
-        from goods_brand
-        <where>
-            <if test="id!=null">
-                and id = #{id}
-            </if>
-            <if test="name!=null">
-                and name like '%${name}%'
-            </if>
-        </where>
-    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
 		delete from
 		goods_brand
 		where id = #{id,jdbcType=BIGINT}
 	</delete>
-    <delete id="deleteByPrimaryKeys">
-        delete from goods_brand where id in
-        <foreach item="item" index="index" collection="list" open="("
-                 separator="," close=")">
-            #{item}
-        </foreach>
-    </delete>
     <insert id="insert"
             parameterType="com.earth.mall.app.entity.GoodsBrand">
 		insert into goods_brand (id, name, created_at,
@@ -112,4 +91,25 @@
 		#{updatedAt,jdbcType=TIMESTAMP}
 		where id = #{id,jdbcType=BIGINT}
 	</update>
+    <delete id="deleteByPrimaryKeys">
+        delete from goods_brand where id in
+        <foreach item="item" index="index" collection="list" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <select id="selectByParams" resultMap="BaseResultMap"
+            parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from goods_brand
+        <where>
+            <if test="id!=null">
+                and id = #{id}
+            </if>
+            <if test="name!=null">
+                and name like '%${name}%'
+            </if>
+        </where>
+    </select>
 </mapper>
