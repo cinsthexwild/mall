@@ -2,7 +2,11 @@ package com.earth.mall.app.dao;
 
 import com.earth.mall.app.entity.GoodsCategory;
 
+import java.util.List;
+import java.util.Map;
+
 public interface GoodsCategoryMapper {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(GoodsCategory record);
@@ -14,4 +18,9 @@ public interface GoodsCategoryMapper {
     int updateByPrimaryKeySelective(GoodsCategory record);
 
     int updateByPrimaryKey(GoodsCategory record);
+
+    int deleteByPrimaryKeys(List<Long> ids);
+
+    List<GoodsCategory> selectByParams(Map<String, Object> params);
+
 }
