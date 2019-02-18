@@ -7,17 +7,20 @@ public class PageInfo implements Serializable {
     private static final long serialVersionUID = 1849970732535095451L;
 
     // pagesize ，每一页显示多少
-    private int pageSize = 3;
-    // 总页数
-    private int totalPage;
+    private int pageSize = Const.PAGE_SIZE;
     // 总记录数
-    private int totalResult;
+    private int total = 0;
     // 当前页数
-    private int currentPage;
-    // 当前显示到的ID, 在mysql limit 中就是第一个参数.
-    private int currentResult;
-    private String sortField;
-    private String order;
+    private int currentPage = 1;
+
+    /**
+     * 总页数
+     *
+     * @return
+     */
+    public int getTotalPage() {
+        return pageSize < 1 ? 0 : (int) Math.ceil((double) total / pageSize);
+    }
 
     public int getPageSize() {
         return pageSize;
@@ -27,20 +30,12 @@ public class PageInfo implements Serializable {
         this.pageSize = pageSize;
     }
 
-    public int getTotalPage() {
-        return totalPage;
+    public int getTotal() {
+        return total;
     }
 
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
-    }
-
-    public int getTotalResult() {
-        return totalResult;
-    }
-
-    public void setTotalResult(int totalResult) {
-        this.totalResult = totalResult;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     public int getCurrentPage() {
@@ -49,30 +44,6 @@ public class PageInfo implements Serializable {
 
     public void setCurrentPage(int currentPage) {
         this.currentPage = currentPage;
-    }
-
-    public int getCurrentResult() {
-        return currentResult;
-    }
-
-    public void setCurrentResult(int currentResult) {
-        this.currentResult = currentResult;
-    }
-
-    public String getSortField() {
-        return sortField;
-    }
-
-    public void setSortField(String sortField) {
-        this.sortField = sortField;
-    }
-
-    public String getOrder() {
-        return order;
-    }
-
-    public void setOrder(String order) {
-        this.order = order;
     }
 
 }

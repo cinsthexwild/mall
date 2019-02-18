@@ -100,7 +100,7 @@ public class PageInterceptor implements Interceptor {
                     rs.close();
                     countStmt.close();
 
-                    page.setTotalResult(count);
+                    page.setTotal(count);
                     String pageSql = generatePageSql(sql, page);
 //					System.out.println("page sql:" + pageSql);
                     ReflectHelper.setValueByFieldName(boundSql, "sql", pageSql);
@@ -156,16 +156,17 @@ public class PageInterceptor implements Interceptor {
     private String generatePageSql(String sql, PageInfo page) {
         if (page != null && (dialect != null || !dialect.equals(""))) {
             StringBuffer pageSql = new StringBuffer();
+            int startIndex = (page.getCurrentPage() - 1) * page.getPageSize();
             if ("mysql".equals(dialect)) {
                 pageSql.append(sql);
-                pageSql.append(" limit " + page.getCurrentResult() + "," + page.getPageSize());
+                pageSql.append(" limit " + startIndex + "," + page.getPageSize());
             } else if ("oracle".equals(dialect)) {
                 pageSql.append("select * from (select tmp_tb.*,ROWNUM row_id from (");
                 pageSql.append(sql);
                 pageSql.append(")  tmp_tb where ROWNUM<=");
-                pageSql.append(page.getCurrentResult() + page.getPageSize());
+                pageSql.append(startIndex + page.getPageSize());
                 pageSql.append(") where row_id>");
-                pageSql.append(page.getCurrentResult());
+                pageSql.append(startIndex);
             }
             return pageSql.toString();
         } else {
